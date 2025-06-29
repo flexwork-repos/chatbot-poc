@@ -1,0 +1,178 @@
+/* MobileVerification.css */
+.mobile-verification-container {
+    position: relative;
+    height: 100vh;
+    width: 100%;
+    max-width: 420px;
+    margin: 0 auto;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    overflow: hidden;
+    background-color: #fff;
+  }
+  
+  .yellow-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 45%;
+    background-color: #7b75fc;
+    border-bottom-left-radius: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 64px;
+  }
+  
+  .icon-container {
+    background-color:  #7b75fc;
+    height: 100px;
+    width: 100px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 0px;
+  }
+  
+  .phone-icon,
+  .email-icon {
+    height: 32px;
+    width: 32px;
+    stroke: #000;
+  }
+  
+  .title {
+    margin-top: 16px;
+    font-size: 20px;
+    font-weight: 500;
+    color: #FFFFFF;
+  }
+  
+  .subtitle {
+    margin-top: 8px;
+    font-size: 14px;
+    color:#FFFFFF;
+    text-align: center;
+  }
+  
+  .form-content {
+    position: absolute;
+    top: 45%;
+    left: 0;
+    right: 0;
+    padding: 0 24px;
+  }
+  
+  /* Phone input container for country code and phone number in same row */
+  .phone-input-container {
+    display: flex;
+    align-items: center;
+    margin-bottom: 24px;
+    width: 100%;
+  }
+  
+  .country-code-select {
+    width: 80px;
+    height: 48px;
+    padding: 0 8px;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px 0 0 8px;
+    font-size: 16px;
+    color: #333333;
+    background-color: #ffffff;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    flex-shrink: 0;
+  }
+
+  .country-code-select:focus {
+    border-color: #7b75fc;
+    outline: none;
+  }
+  
+  /* Adjust phone input to work well with country code */
+  .phone-input-container .phone-input {
+    border-radius: 0 8px 8px 0;
+    margin-bottom: 0;
+    border-left: none;
+    flex-grow: 1;
+  }
+
+  .name-input,
+  .phone-input,
+  .email-input {
+    width: 100%;
+    height: 48px;
+    padding: 0 16px;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    font-size: 16px;
+    color: #333;
+    margin-bottom: 24px;
+    transition: all 0.2s ease;
+  }
+
+  .name-input:focus,
+  .phone-input:focus,
+  .email-input:focus {
+    border-color: #7b75fc;
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(123, 117, 252, 0.2);
+  }
+
+  .name-input {
+    margin-bottom: 16px;
+  }
+
+  .phone-input::placeholder,
+  .email-input::placeholder {
+    color: #aaa;
+  }
+  
+  .toggle-container {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+    margin-top: 15px;
+  }
+  
+  .toggle-button {
+    display: flex;
+    align-items: center;
+    background: none;
+    border: none;
+    color: #000;
+    font-size: 14px;
+    cursor: pointer;
+    padding: 5px 10px;
+    border-radius: 20px;
+  }
+  
+  .toggle-button:hover {
+    background-color: #7b75fc ;
+    color: #ffffff;
+  }
+  
+  .toggle-icon {
+    height: 20px;
+    width: 20px;
+    margin-right: 8px;
+  }
+  
+  .next-button {
+    width: 100%;
+    background-color: #7b75fc;
+    color: #FFFFFF;
+    border: none;
+    border-radius: 8px;
+    padding: 16px;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+  }
+  
+  .next-button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
