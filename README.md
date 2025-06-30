@@ -180,3 +180,21 @@ If you're experiencing issues with database connections:
 ## License
 
 This project is licensed under the MIT License - see the LICENSE file for details.
+
+
+python -m venv venv
+
+venv\Scripts\activate
+
+pip install -r requirement.txt
+
+python rag_backend.py
+
+
+
+------------------------
+
+
+venv\Scripts\activate
+
+python rag_backend.py
