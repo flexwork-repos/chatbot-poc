@@ -27,8 +27,8 @@
 
 .chatbot {
   position: fixed;
-  bottom: 100px;
-  right: 30px;
+  /* bottom: 100px; */
+  /* right: 30px; */
   width: 380px;
   height: 550px;
   z-index: 1000;
@@ -62,12 +62,12 @@
 
 /* Responsive adjustments */
 @media screen and (max-width: 768px) {
-  .chatbot {
+  /* .chatbot {
     right: 10px;
     bottom: 80px;
     width: calc(100% - 20px);
     max-width: 380px;
-  }
+  } */
   
   .chatbot-toggler {
     right: 20px;
