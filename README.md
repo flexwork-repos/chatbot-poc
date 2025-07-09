@@ -182,6 +182,19 @@ If you're experiencing issues with database connections:
 This project is licensed under the MIT License - see the LICENSE file for details.
 
 
+sudo apt install python3
+sudo apt install python3-pip
+sudo apt install python3.12-venv
+
+
+python3 -m venv venv
+source venv/bin/activate
+pip3 install -r requirement.txt
+nohup python3 rag_backend.py &
+
+
+-----------------------
+
 python -m venv venv
 
 venv\Scripts\activate
