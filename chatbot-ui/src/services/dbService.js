@@ -5,11 +5,7 @@ import axios from 'axios';
 // For ngrok URLs, we need to handle them specially
 const isNgrok = window.location.hostname.includes('ngrok');
 
-const API_BASE_URL = window.location.hostname === 'localhost' 
-  ? 'http://localhost:3001/api'
-  : isNgrok
-    ? window.location.protocol + '//' + window.location.hostname + '/api'
-    : window.location.protocol + '//' + window.location.hostname + ':3001/api';
+const API_BASE_URL = 'http://13.201.157.197:5001/api';
 
 /**
  * Save user information to the database

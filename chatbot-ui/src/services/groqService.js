@@ -153,11 +153,7 @@ export const callGroqAPI = async (input, userSelections = {}) => {
   // For ngrok URLs, we need to handle them specially
   const isNgrok = window.location.hostname.includes('ngrok');
   
-  const baseUrl = window.location.hostname === 'localhost'
-    ? 'http://localhost:3001'
-    : isNgrok
-      ? window.location.protocol + '//' + window.location.hostname
-      : window.location.protocol + '//' + window.location.hostname + ':3001';
+  const baseUrl = 'http://13.201.157.197:5001';
     
   try {
     const response = await fetch(`${baseUrl}/api/groq/chat`, {
