@@ -1,4 +1,4 @@
-/* ChatBot Styles */
+/* 
 .chatbot-toggler {
   background-color: #d85656;
   position: fixed;
@@ -60,7 +60,6 @@
   background: linear-gradient(135deg, #7b75fc 0%,  #9588c9 100%);
 }
 
-/* Responsive adjustments */
 @media screen and (max-width: 768px) {
   .chatbot {
     right: 10px;
@@ -75,12 +74,10 @@
   }
 }
 
-/* Additional style for body when chatbot is open */
 body.chatbot-open {
   overflow: hidden;
 } 
 
-/* Container for toggler and message */
 .chatbot-toggler-container {
   position: fixed;
   bottom: 30px;
@@ -90,12 +87,11 @@ body.chatbot-open {
   align-items: center;
 }
 
-/* Interactive message beside toggler - minimalist text-only design */
 .chatbot-message {
   position: absolute;
-  right: 75px; /* Position to the left of the button */
-  bottom: 18px; /* Align vertically with the button */
-  color: #ffffff; /* Match button color */
+  right: 75px; 
+  bottom: 18px;
+  color: #ffffff;
   font-size: 14px;
   font-weight: 600;
   white-space: nowrap;
@@ -105,10 +101,8 @@ body.chatbot-open {
   opacity: 0.9;
   transition: all 0.3s ease;
   animation: fadeInOut 3s infinite;
-  /* No background */
 }
 
-/* Shimmering animated gradient text effect */
 
 
 
@@ -163,7 +157,6 @@ body.chatbot-open {
   transform: none;
 }
 
-/* Fallback for browsers without background-clip support */
 @supports not ((-webkit-background-clip: text) or (background-clip: text)) {
   .chatbot-message {
     color: #7b75fc;
@@ -194,28 +187,25 @@ body.chatbot-open {
   text-shadow: 0 0 8px rgba(255, 255, 255, 0.5);
 }
 
-/* Typing dots animation */
 @keyframes dotPulse {
   0%, 100% { opacity: 0.2; transform: scale(0.7); }
   50% { opacity: 1; transform: scale(1.2); }
 }
 
-/* Text glow animation */
 @keyframes fadeInOut {
   0%, 100% { opacity: 0.7; text-shadow: 0 0 0 rgba(255, 255, 255, 0); }
   50% { opacity: 1; text-shadow: 0 0 10px rgba(255, 255, 255, 0.5); }
 }
 
 .chatbot-toggler.btn.rounded-circle {
-  background-color: #7b75fc; /* Change to your preferred color */
-  color: #ffffff; /* Text/icon color */
+  background-color: #7b75fc;
+  color: #ffffff;
 }
 
-/* Responsive adjustments for the message */
 @media screen and (max-width: 576px) {
   .chatbot-message {
     font-size: 12px;
     padding: 8px 12px;
     right: 65px;
   }
-}
+} */
