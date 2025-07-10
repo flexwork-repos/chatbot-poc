@@ -5,8 +5,8 @@ import axios from 'axios';
 // For ngrok URLs, we need to handle them specially
 const isNgrok = window.location.hostname.includes('ngrok');
 
-const API_BASE_URL = 'http://13.201.157.197:5001/api';
-
+const API_BASE_URL = 'https://devapi.flex-work.in/flexwork-api/v1/chatbot';
+// https://devapi.flex-work.in/cb
 /**
  * Save user information to the database
  * @param {Object} userInfo - Object containing user information (name, email, phone, etc.)
@@ -17,11 +17,13 @@ export const saveUserInfo = async (userInfo) => {
     // Format the data to match the user_selections table schema
     const formattedUserSelections = {
       // Use existing sessionId or it will be generated on the backend
-      sessionId: userInfo.sessionId || undefined,
+      "sessionId": "session-1746889595442",
+      // sessionId: userInfo.sessionId || undefined,
       
       // Extract user selections for the backend
       userSelections: {
         // Basic user info
+        
         name: userInfo.name || (userInfo.contactInfo?.name || ''),
         email: userInfo.email || (userInfo.contactInfo?.email || ''),
         phone: userInfo.phone || (userInfo.contactInfo?.phone || ''),
@@ -44,12 +46,16 @@ export const saveUserInfo = async (userInfo) => {
         freelancer_category: userInfo.freelancerCategory || userInfo.freelancer_category || '',
         
         // Include any additional fields from contact info
-        ...userInfo.contactInfo
+        contactInfo: {
+          ...userInfo.contactInfo
+        },
       }
     };
     
     // Use the new API endpoint that matches the backend
-    const response = await axios.post(`${API_BASE_URL}/user-selections`, formattedUserSelections);
+
+// formattedUserSelections
+    const response = await axios.post(`${API_BASE_URL}/user/captures`, formattedUserSelections);
     return response.data;
   } catch (error) {
     console.error('Error saving user information:', error);
