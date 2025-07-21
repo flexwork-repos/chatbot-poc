@@ -5,7 +5,7 @@ import axios from 'axios';
 // For ngrok URLs, we need to handle them specially
 const isNgrok = window.location.hostname.includes('ngrok');
 
-const API_BASE_URL = 'https://devapi.flex-work.in/flexwork-api/v1/chatbot';
+// const API_BASE_URL = 'https://devapi.flex-work.in/flexwork-api/v1/chatbot';
 // https://devapi.flex-work.in/cb
 /**
  * Save user information to the database
@@ -55,7 +55,7 @@ export const saveUserInfo = async (userInfo) => {
     // Use the new API endpoint that matches the backend
 
 // formattedUserSelections
-    const response = await axios.post(`${API_BASE_URL}/user/captures`, formattedUserSelections);
+    const response = await axios.post(`${process.env.API_BASE_URL}/user/captures`, formattedUserSelections);
     return response.data;
   } catch (error) {
     console.error('Error saving user information:', error);

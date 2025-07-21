@@ -153,10 +153,10 @@ export const callGroqAPI = async (input, userSelections = {}) => {
   // For ngrok URLs, we need to handle them specially
   const isNgrok = window.location.hostname.includes('ngrok');
   
-  const baseUrl = 'https://devapi.flex-work.in/cb';
+  // const baseUrl = 'https://devapi.flex-work.in/cb';
     
   try {
-    const response = await fetch(`${baseUrl}/api/groq/chat`, {
+    const response = await fetch(`${process.env.baseUrl}/api/groq/chat`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ messages })
