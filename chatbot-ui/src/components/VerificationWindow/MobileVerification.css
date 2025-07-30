@@ -26,7 +26,7 @@
   
   .icon-container {
     background-color:  #7b75fc;
-    height: 100px;
+    /* height: 100px; */
     width: 100px;
     border-radius: 50%;
     display: flex;
@@ -179,5 +179,5 @@
   .bot-desc{
     color: white;
     text-align: center;
-    padding-top: 15px;
+    padding-top: 40px;
   }
