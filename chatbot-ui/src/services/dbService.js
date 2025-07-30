@@ -5,7 +5,8 @@ import axios from 'axios';
 // For ngrok URLs, we need to handle them specially
 const isNgrok = window.location.hostname.includes('ngrok');
 
-const API_BASE_URL = 'https://devapi.flex-work.in/flexwork-api/v1/chatbot';
+// const API_BASE_URL = 'https://devapi.flex-work.in/flexwork-api/v1/chatbot'; // DEV
+const API_BASE_URL = 'https://api.flex-work.in/flexwork-api/v1/chatbot'; // PROD
 // https://devapi.flex-work.in/cb
 /**
  * Save user information to the database
