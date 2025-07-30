@@ -39,7 +39,7 @@ CORS(app, resources={
     }
 })
 
-@app.route("/api/test", methods=["GET"])
+@app.route("/cb/api/test", methods=["GET"])
 def test_connection():
     """Simple endpoint to test if the backend is accessible"""
     return jsonify({
@@ -144,7 +144,7 @@ def init_database():
 if not init_database():
     logger.warning("Database initialization failed - some features may not work")
     
-@app.route("/api/health", methods=["GET"])
+@app.route("/cb/api/health", methods=["GET"])
 def health_check():
     try:
         health_status = {
@@ -193,7 +193,7 @@ def health_check():
         }), 500
 
 # Groq chat endpoint with RAG integration
-@app.route("/api/groq/chat", methods=["POST"])
+@app.route("/cb/api/groq/chat", methods=["POST"])
 def chat_with_groq():
     try:
         payload = request.json or {}
@@ -270,7 +270,7 @@ def chat_with_groq():
         return jsonify({"error": str(e)}), 500
 
 # Save user selections
-@app.route("/api/user-selections", methods=["POST"])
+@app.route("/cb/api/user-selections", methods=["POST"])
 def save_user_selections():
     try:
         data = request.json
@@ -389,7 +389,7 @@ def save_user_selections():
             else:
                 # Insert new record
                 insert_query = """
-                INSERT INTO user_selections (
+                INSERT INTO chat_user_captures (
                     session_id, user_type, name, email, phone, role, work_mode,
                     skills, employer_headcount_consultant, employer_project_size_consultant,
                     employer_service, employer_start_time_consultant, employer_work_mode_consultant,
@@ -427,7 +427,7 @@ def save_user_selections():
 
 # Vector Database Management Endpoints
 
-@app.route("/api/vector-db/status", methods=["GET"])
+@app.route("/cb/api/vector-db/status", methods=["GET"])
 def vector_db_status():
     """Get the status of the vector database"""
     try:
@@ -448,7 +448,7 @@ def vector_db_status():
         logger.error(f"Error checking vector DB status: {e}")
         return jsonify({"status": "error", "message": str(e)}), 500
 
-@app.route("/api/vector-db/upload", methods=["POST"])
+@app.route("/cb/api/vector-db/upload", methods=["POST"])
 def upload_document():
     """Upload a document to the vector database"""
     try:
@@ -499,7 +499,7 @@ def upload_document():
         logger.error(f"Error uploading document: {e}")
         return jsonify({"error": str(e)}), 500
 
-@app.route("/api/vector-db/search", methods=["POST"])
+@app.route("/cb/api/vector-db/search", methods=["POST"])
 def search_vector_db():
     """Search the vector database with relevancy filtering"""
     try:
@@ -564,7 +564,7 @@ def search_vector_db():
         logger.error(f"Error searching vector DB: {e}")
         return jsonify({"error": str(e)}), 500
 
-@app.route("/api/vector-db/documents", methods=["GET"])
+@app.route("/cb/api/vector-db/documents", methods=["GET"])
 def list_documents():
     """List all documents in the vector database"""
     try:
@@ -612,7 +612,7 @@ def list_documents():
         logger.error(f"Error listing documents: {e}")
         return jsonify({"error": str(e)}), 500
 
-@app.route("/api/vector-db/documents/<filename>", methods=["DELETE"])
+@app.route("/cb/api/vector-db/documents/<filename>", methods=["DELETE"])
 def delete_document(filename):
     """Delete a document from the vector database"""
     try:
@@ -638,7 +638,7 @@ def delete_document(filename):
         logger.error(f"Error deleting document: {e}")
         return jsonify({"error": str(e)}), 500
 
-@app.route("/api/vector-db/reset", methods=["POST"])
+@app.route("/cb/api/vector-db/reset", methods=["POST"])
 def reset_vector_db():
     """Reset the vector database"""
     try:
@@ -657,4 +657,4 @@ def reset_vector_db():
 if __name__ == "__main__":
     # Bind to 0.0.0.0 to make the server accessible externally
     # This is important for ngrok to be able to forward requests
-    app.run(host="0.0.0.0", port=3001, debug=False, threaded=True)
+    app.run(host="0.0.0.0", port=5001, debug=False, threaded=True)

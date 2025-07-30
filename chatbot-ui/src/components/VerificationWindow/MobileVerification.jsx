@@ -100,6 +100,7 @@ export default function MobileVerification({ onProceedToBot = () => {} }) {
     <div className="mobile-verification-container">
       {/* Yellow curved background */}
       <div className="yellow-background">
+      <div className='bot-desc'><p>Hi 👋 Please fill out the form below to start chatting with the ARTH-AI.</p></div>
         {/* Icon: Phone or Email based on method */}
         <div className="icon-container">
           {verificationMethod === 'phone' ? (
