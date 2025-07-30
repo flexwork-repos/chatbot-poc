@@ -99,7 +99,7 @@ const ChatBotWindow = () => {
                     objectFit: 'contain'
                   }}
                 />
-                Flexwork Assistant
+                Flexwork AI Assistant
                 {/* <button
                     className="btn-close btn-close-white ms-auto"
                     onClick={toggleChatbot}
