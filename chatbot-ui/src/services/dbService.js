@@ -22,7 +22,7 @@ export const saveUserInfo = async (userInfo) => {
       // sessionId: userInfo.sessionId || undefined,
       
       // Extract user selections for the backend
-      userSelections: {
+      userSelections: JSON.stringify({
         // Basic user info
         
         name: userInfo.name || (userInfo.contactInfo?.name || ''),
@@ -50,7 +50,8 @@ export const saveUserInfo = async (userInfo) => {
         contactInfo: {
           ...userInfo.contactInfo
         },
-      }
+      })
+      
     };
     
     // Use the new API endpoint that matches the backend
