@@ -559,7 +559,7 @@ const flowConfig = {
     id: "student_thanks",
     message: "Thank you for sharing your interests! We'll help connect you with the right resources and opportunities to support your career journey.",
     type: "message",
-    nextStep: "contact_info"
+    nextStep: "verify_selections"
   },
 
   // Freelancer flow
@@ -582,7 +582,7 @@ const flowConfig = {
     message: "What is your current availability (e.g., part-time, full-time, project-based)?",
     type: "input",
     inputType: "text",
-    nextStep: "contact_info"
+    nextStep: "verify_selections"
   },
 
   // Universal contact info step
