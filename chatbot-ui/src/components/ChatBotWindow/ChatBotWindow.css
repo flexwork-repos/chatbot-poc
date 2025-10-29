@@ -219,3 +219,13 @@ body.chatbot-open {
     right: 65px;
   }
 }
+
+.getstarted {
+  background: #7b7dfc;
+  background: linear-gradient(
+    180deg,
+    rgba(123, 125, 252, 1) 0%,
+    rgba(123, 125, 252, 1) 65%,
+    rgba(255, 255, 255, 1) 100%
+  );
+}

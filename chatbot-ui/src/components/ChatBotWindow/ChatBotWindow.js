@@ -82,56 +82,41 @@ const ChatBotWindow = () => {
         {!isVerified ? (
           <MobileVerification onProceedToBot={handleVerificationComplete} />
         ) : (
-          <div className="card border-0 h-100">
-            <div className="card-header bg-gradient-primary text-white">
-              <h5 className="mb-0 d-flex align-items-center">
-                <img
-                  src={robotPng}
-                  alt="Arth-AI chatbot"
-                  className="me-2"
-                  style={{
-                    width: "30px",
-                    height: "30px",
-                    objectFit: "contain",
-                  }}
-                />
-                Flexwork AI Assistant
-                {/* <button
-                    className="btn-close btn-close-white ms-auto"
-                    onClick={toggleChatbot}
-                    aria-label="Close"
-                  ></button> */}
-              </h5>
+          <div
+            className="d-flex flex-column h-100 justify-content-between getstarted"
+            style={{ padding: "28px" }}
+          >
+            <div>
+              <FwLogo />
             </div>
+              <div className="p-0 d-flex flex-column">
+                <ChatMessages />
 
-            <div className="card-body p-0 d-flex flex-column">
-              <ChatMessages />
+                {/* Options area - with performance optimization */}
+                {currentStepConfig.type === "options" && !flowCompleted && (
+                  <ChatOptions
+                    options={currentStepConfig.options || []}
+                    onSelect={handleUserInput}
+                  />
+                )}
 
-              {/* Options area - with performance optimization */}
-              {currentStepConfig.type === "options" && !flowCompleted && (
-                <ChatOptions
-                  options={currentStepConfig.options || []}
-                  onSelect={handleUserInput}
-                />
-              )}
-
-              {/* Input area - hide when type is final or disableInput is true */}
-              {(currentStepConfig.type === "input" ||
-                currentStepConfig.type === "open_chat" ||
-                (flowCompleted &&
-                  currentStepConfig.type !== "final" &&
-                  !currentStepConfig.disableInput)) && (
-                <ChatInput
-                  placeholder={
-                    flowCompleted ? placeholderText : "Type your response..."
-                  }
-                  inputType={currentStepConfig.inputType || "text"}
-                  placeholderAnimation={
-                    flowCompleted ? placeholderAnimation : null
-                  }
-                />
-              )}
-            </div>
+                {/* Input area - hide when type is final or disableInput is true */}
+                {(currentStepConfig.type === "input" ||
+                  currentStepConfig.type === "open_chat" ||
+                  (flowCompleted &&
+                    currentStepConfig.type !== "final" &&
+                    !currentStepConfig.disableInput)) && (
+                  <ChatInput
+                    placeholder={
+                      flowCompleted ? placeholderText : "Type your response..."
+                    }
+                    inputType={currentStepConfig.inputType || "text"}
+                    placeholderAnimation={
+                      flowCompleted ? placeholderAnimation : null
+                    }
+                  />
+                )}
+              </div>
           </div>
         )}
       </animated.div>
