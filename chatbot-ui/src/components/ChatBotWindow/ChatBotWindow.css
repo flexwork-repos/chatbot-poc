@@ -30,7 +30,7 @@
   /* bottom: 100px; */
   /* right: 30px; */
   width: 380px;
-  height: 550px;
+  height: 600px;
   z-index: 1000;
   border-radius: 12px;
   overflow: hidden;
@@ -218,4 +218,14 @@ body.chatbot-open {
     padding: 8px 12px;
     right: 65px;
   }
+}
+
+.getstarted {
+  background: #7b7dfc;
+  background: linear-gradient(
+    180deg,
+    rgba(123, 125, 252, 1) 0%,
+    rgba(123, 125, 252, 1) 65%,
+    rgba(255, 255, 255, 1) 100%
+  );
 }

@@ -3,10 +3,9 @@
   display: flex;
   flex-direction: column;
   gap: 16px;
-  padding: 20px;
-  height: calc(100vh - 180px);
+  padding: 20px 0;
+  height: calc(100vh - 260px);
   overflow-y: auto;
-  background-color: #ffffff;
 }
 
 .message {
@@ -31,7 +30,7 @@
   width: 40px;
   height: 40px;
   border-radius: 50%;
-  background-color: #7b75fc;
+  background-color: #FFF;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -41,7 +40,7 @@
 .avatar svg {
   width: 24px;
   height: 24px;
-  color: white;
+  color: #7b75fc;
 }
 
 .message-content {
@@ -57,8 +56,8 @@
 }
 
 .message-outgoing .message-content {
-  background-color: #0084ff;
-  color: white;
+  color: #333;
+  background-color: white;
   border-top-right-radius: 4px;
 }
 
