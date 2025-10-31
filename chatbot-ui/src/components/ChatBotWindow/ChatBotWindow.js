@@ -84,23 +84,22 @@ const ChatBotWindow = () => {
         ) : (
           <div
             className="d-flex flex-column h-100 justify-content-between getstarted"
-            style={{ padding: "28px" }}
+            style={{ padding: "28px 18px 10px" }}
           >
             <div>
               <FwLogo />
             </div>
-              <div className="p-0 d-flex flex-column">
+            <div className="p-0 d-flex flex-column flex-grow-1 overflow-hidden">
+              <div class="p-2 h-100" style={{ flex: 1, overflowY: "auto" }}>
                 <ChatMessages />
-
-                {/* Options area - with performance optimization */}
+              </div>
+              <div class="p-2 flex-shrink-1">
                 {currentStepConfig.type === "options" && !flowCompleted && (
                   <ChatOptions
                     options={currentStepConfig.options || []}
                     onSelect={handleUserInput}
                   />
                 )}
-
-                {/* Input area - hide when type is final or disableInput is true */}
                 {(currentStepConfig.type === "input" ||
                   currentStepConfig.type === "open_chat" ||
                   (flowCompleted &&
@@ -117,6 +116,7 @@ const ChatBotWindow = () => {
                   />
                 )}
               </div>
+            </div>
           </div>
         )}
       </animated.div>

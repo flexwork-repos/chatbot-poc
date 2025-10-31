@@ -5,7 +5,7 @@
   gap: 16px;
   padding: 20px 0;
   height: calc(100vh - 260px);
-  overflow-y: auto;
+  /* overflow-y: auto; */
 }
 
 .message {
