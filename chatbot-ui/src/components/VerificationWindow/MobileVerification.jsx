@@ -121,7 +121,7 @@ export default function MobileVerification({ onProceedToBot = () => {} }) {
                   fontFamily: "Lato",
                   fontWeight: "500",
                   fontStyle: "SemiBold",
-                  fontSize: "32px",
+                  fontSize: "30px",
                   lineHeight: "110%",
                 }}
               >
