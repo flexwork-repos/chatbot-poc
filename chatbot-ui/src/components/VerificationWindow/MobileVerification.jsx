@@ -219,7 +219,7 @@ export default function MobileVerification({ onProceedToBot = () => {} }) {
                 }}
               >
                 Hi 👋 Please fill out the form below to start chatting with the
-                ARTH-AI.
+                Flexa AI.
               </p>
             </div>
           </div>
